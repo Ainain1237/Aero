@@ -24,18 +24,26 @@ export function ContactForm() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('Sending...');
+
+    const form = new FormData();
+    form.append('access_key', process.env.NEXT_PUBLIC_YOUR_ACCESS_KEY_HERE || '');
+    form.append('name', formData.name);
+    form.append('email', formData.email);
+    form.append('subject', formData.subject);
+    form.append('message', formData.message);
+
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: form
       });
-      if (response.ok) {
+
+      const data = await response.json();
+
+      if (data.success) {
         setStatus('Message sent successfully');
         setFormData({
           name: '',
@@ -44,9 +52,11 @@ export function ContactForm() {
           message: '',
         });
       } else {
-        setStatus('Failed to send message');
+        console.log('Error:', data);
+        setStatus(data.message || 'Failed to send message');
       }
     } catch (error) {
+      console.error('Error:', error);
       setStatus('Failed to send message');
     }
   };
@@ -54,13 +64,14 @@ export function ContactForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Contact Us</CardTitle>
-        <CardDescription>Fill out the form below to get in touch with our team.</CardDescription>
+        <CardTitle>Send us a Message</CardTitle>
+        <CardDescription>Fill out the form below and we&apos;ll get back to you as soon as possible.</CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <Input
+              type="text"
               name="name"
               placeholder="Your Name"
               value={formData.name}
@@ -70,8 +81,8 @@ export function ContactForm() {
           </div>
           <div>
             <Input
-              name="email"
               type="email"
+              name="email"
               placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
@@ -80,6 +91,7 @@ export function ContactForm() {
           </div>
           <div>
             <Input
+              type="text"
               name="subject"
               placeholder="Subject"
               value={formData.subject}
@@ -97,8 +109,8 @@ export function ContactForm() {
             />
           </div>
           <Button type="submit">Send Message</Button>
+          {status && <p className="mt-4 text-sm">{status}</p>}
         </form>
-        {status && <p className="mt-4 text-center">{status}</p>}
       </CardContent>
     </Card>
   );
