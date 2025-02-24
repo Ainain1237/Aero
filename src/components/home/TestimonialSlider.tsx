@@ -1,4 +1,4 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 
 export function TestimonialSlider() {
@@ -9,7 +9,7 @@ export function TestimonialSlider() {
         <div className="max-w-4xl mx-auto">
           <Card className="p-8">
             <p className="text-lg italic mb-4">
-              &quot;BrightQ Aerospace Limited's attention to detail and cutting-edge innovations make them a standout company in their field.&quot;
+              &quot;BrightQ Aerospace Limited&apos;s  attention to detail and cutting-edge innovations make them a standout company in their field.&quot;
             </p>
             <div className="flex items-center">
               {/* <Image
