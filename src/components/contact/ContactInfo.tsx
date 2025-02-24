@@ -26,7 +26,8 @@ export function ContactInfo() {
           </div>
           <div className="flex items-center">
             <Mail className="w-5 h-5 mr-2 text-primary" />
-            <p>ainainaftab111@gmail.com</p>
+            <p>brightqaerospacee@gmail.com
+            </p>
           </div>
         </CardContent>
       </Card>
