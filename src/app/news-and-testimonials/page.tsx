@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from '@/components/ui/button'
+import { ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 const newsItems = [ 
   {
@@ -56,8 +59,8 @@ const newsItems = [
 // ]
 
 export const metadata = {
-  title: 'News & Testimonials - SpaceVenture',
-  description: 'Stay updated with the latest news from SpaceVenture and read what our clients say about us.',
+  title: 'News & Testimonials - BrightQ',
+  description: 'Stay updated with the latest news and read what our clients say about us.',
 }
 
 export default function NewsAndTestimonialsPage() {
@@ -82,7 +85,14 @@ export default function NewsAndTestimonialsPage() {
           ))}
         </div>
       </section>
-      
+      <div className="text-center mt-12">
+      <Link href="https://www.isro.gov.in/recent_updates.html" target="_blank" rel="noopener noreferrer">
+          <Button size="lg">
+          ISRO Live Updates
+            <ChevronRight className="ml-2 h-4 w-4" />
+          </Button>
+          </Link>
+        </div>
       {/* <section>
         <h2 className="text-3xl font-bold mb-6">Client Testimonials</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -101,5 +111,6 @@ export default function NewsAndTestimonialsPage() {
         </div>
       </section> */}
     </div>
+    
   )
 }
