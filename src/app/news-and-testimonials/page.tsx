@@ -9,37 +9,37 @@ const newsItems = [
     title: "BrightQ Aerospace Limited Startup Shines Bright in the Aerospace Industry",
     date: "2025-06-15",
     content: "BrightQ successfully deployed a new constellation of communication satellites, enhancing global connectivity.",
-    image: "/Logo .jpeg",
+    image: "https://res.cloudinary.com/dqdojki39/image/upload/v1735195300/Logo_bq2do5.jpg",
   },
   {
     title: "Breakthrough in Mini Surveillance Radar Technology",
     date: "2025-05-22",
     content: "Our research team has developed a revolutionary Mini Surveillance Radar Technology, marking a significant advancement in space exploration.",
-    image: "/8.jpg",
+    image: "https://res.cloudinary.com/dqdojki39/image/upload/v1735195211/8_vh97qu.jpg",
   },
   {
     title: "BrightQ Plans to Build Army Surveillance UAV ",
     date: "2025-04-10",
     content: "BrightQ has announced ambitious plans to develop an innovative Army Surveillance UAV that promises to revolutionize military operations.",
-    image: "/9.jpg",
+    image: "https://res.cloudinary.com/dqdojki39/image/upload/v1735195213/9_s4r0cp.jpg",
   },
   {
     title: "BrightQ Plans to Build Sustainable Engine for Rocket ",
     date: "2025-04-10",
     content: "BrightQ has unveiled plans to develop a groundbreaking sustainable engine for rockets, aiming to revolutionize the aerospace industry.",
-    image: "/10.jpeg",
+    image: "https://res.cloudinary.com/dqdojki39/image/upload/v1735195211/10_qdjzd3.jpg",
   },
   {
     title: "Revolutionary Surveillance Drone Developed for Space Exploration ",
     date: "2025-04-10",
     content: "Our research team has successfully developed a revolutionary surveillance drone, marking a significant advancement in space exploration.",
-    image: "/11.webp",
+    image: "https://res.cloudinary.com/dqdojki39/image/upload/v1735195210/11_ukegna.webp",
   },
   {
     title: "BrightQ Launches New Satellite Constellation ",
     date: "2025-04-10",
     content: "BrightQ successfully deployed a new constellation of communication satellites, enhancing global connectivity",
-    image: "/7.webp",
+    image: "https://res.cloudinary.com/dqdojki39/image/upload/v1735195210/7_pzes2m.webp",
   },
 ]
 
